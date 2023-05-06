@@ -1,0 +1,22 @@
+---
+# usearch sintax .udb
+usearch_udb: /nfs-test/mxf/Database/Microbiome/16S_lhs_20210916/usearch_db/darui16s_usearch.udb
+# sample id list
+samples:
+  - 8
+  - 25
+  - 35
+  - 36
+  - 37
+  - 46
+  - 57
+  - 61
+  - 64
+# Work Directory
+work_dir: /nfs-test/mxf/Project/1.16S_analysis/20210906_DR_vs_MeiGe
+# Raw Fastq directory
+fastq_dir: rawdata
+# Directory of result and intermediate files
+result_dir: results
+# CPU thead number
+threads: 8

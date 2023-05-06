@@ -1,0 +1,35 @@
+################################################################
+## NAMES:       Structual Variants Detection Pipeline         ##
+## BUILD:       Snakemake 6.4.1                               ##
+## CONDAE_ENV:  biosoft_py37                                  ##
+## VERSION:     2.0.1                                         ##
+## DATE:        2021.9.29                                     ##
+################################################################
+
+######## configure ########
+reference = config["reference"]
+ucsc = config["ucsc_dir"]
+threads = config["threads"]
+target_interval = config["target_interval"]
+fastq = config["input_fastq"]
+sample_name = config["sample_name"]
+work_dir = config["workdir"]
+
+######## rule all ########
+rule all:
+    input:
+        #~ qc report 
+        expand("{workdir}/{sample}/1.qc_report/rawdata_nanoplot", workdir=work_dir, sample=sample_name),
+        expand("{workdir}/{sample}/1.qc_report/seqkit_stats.txt", workdir=work_dir, sample=sample_name),
+        expand("{workdir}/{sample}/1.qc_report/per_read_stats.txt", workdir=work_dir, sample=sample_name),
+	#~ variant
+	expand("{workdir}/{sample}/3.variant/cutesv_remake.vcf", workdir=work_dir, sample=sample_name)
+        #~ annotation 
+        # expand("{workdir}/{sample}/4.annotation/hg38_annotsv_split.tsv", workdir=work_dir, sample=sample_name)
+
+######## modules ########
+include: "rules/qc_report.smk"
+include: "rules/alignment.smk"
+#include: "rules/alignment_minimap2.smk"
+include: "rules/variant.smk"
+include: "rules/annotate.smk"

@@ -1,0 +1,17 @@
+######## INFO ########
+# NAMES:      illumina 16S sequencing taxonomy classify
+# CONDA_ENV:  
+# DATE:       20210923
+# AUTHOR:     mengxf
+
+workdir: config["work_dir"]
+######## rule all ########
+rule all:
+    input:
+        expand("{result_dir}/3.otu_count/{sample_id}_genus_reads.tsv", \
+                result_dir=config["result_dir"], sample_id=config["samples"]),
+
+######## module ########
+include: "rules/trim.smk"
+include: "rules/usearch.smk"
+include: "rules/otu_count.smk"

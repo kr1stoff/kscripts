@@ -1,0 +1,15 @@
+---
+# Query FASTQ file
+input_fastq: "data/test.fastq.gz"
+# Directory of result and intermediate files
+workdir: "results"
+# Sample name
+sample_name: "test_mmp2"
+# Target BED file of interested interval
+target_interval: ""
+# CPU thead number
+threads: 16
+# FASTA file containing the reference genome
+reference: "/nfs-test/mxf/Database/references/homo_sapiens/hg38.fa"
+# UCSC BED file containing filter region (Group: Mapping and Sequencing, Repeats)
+ucsc_dir: "/nfs-test/mxf/Database/UCSC/hg38"

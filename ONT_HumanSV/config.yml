@@ -1,0 +1,17 @@
+---
+# Query FASTQ file
+INPUT_FASTQ: "data/test.fastq.gz"
+# Directory of result and intermediate files
+WORKDIR: "results"
+# Sample name
+SAMPLE_NAME: "test"
+# Target BED file of interested interval
+TARGET_INTERVAL: ""
+# CPU thead number
+THREADS: 16
+# FASTA file containing the reference genome
+REFERENCE_38: "/home/daruibio/test77/Database/references/homo_sapiens/hg38.fa"
+# UCSC BED file containing filter region (Group: Mapping and Sequencing, Repeats)
+UCSC_DB_DIR: "/home/daruibio/test77/Database/UCSC/hg38"
+# Snakemake utils scipts directory
+SNAKEMAKE_UTILSPATH: "/home/daruibio/test77/Software/Kscripts/SV_snakemake_pipe/utils"

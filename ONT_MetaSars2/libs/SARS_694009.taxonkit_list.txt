@@ -1,0 +1,262 @@
+694009 [species] Severe acute respiratory syndrome-related coronavirus
+227860 [no rank] SARS coronavirus Vietnam
+227861 [no rank] SARS coronavirus Taiwan
+227998 [no rank] SARS coronavirus Hong Kong/03/2003
+228330 [no rank] SARS coronavirus Urbani
+228404 [no rank] SARS coronavirus HKU-39849
+228406 [no rank] SARS coronavirus BJ02
+228407 [no rank] SARS coronavirus BJ01
+228409 [no rank] SARS coronavirus BJ03
+228415 [no rank] SARS coronavirus CUHK-W1
+228607 [no rank] SARS coronavirus BJ04
+229206 [no rank] SARS coronavirus CUHK-Su10
+229992 [no rank] SARS coronavirus Frankfurt 1
+391355 [no rank] SARS coronavirus Frankfurt1-v01
+229993 [no rank] SARS coronavirus TW1
+230471 [no rank] SARS coronavirus ZJ01
+230522 [no rank] SARS coronavirus Taiwan JC-2003
+231513 [no rank] Civet SARS CoV SZ3/2003
+231514 [no rank] SARS coronavirus SZ13
+231515 [no rank] Civet SARS CoV SZ16/2003
+231516 [no rank] SARS coronavirus SZ1
+231517 [no rank] SARS coronavirus GZ43
+231518 [no rank] SARS coronavirus GZ60
+231519 [no rank] SARS coronavirus HKU-36871
+231520 [no rank] SARS coronavirus HKU-65806
+231521 [no rank] SARS coronavirus HKU-66078
+231522 [no rank] SARS coronavirus GZ50
+233044 [no rank] SARS coronavirus GD01
+233872 [no rank] SARS coronavirus TWC
+235088 [no rank] SARS coronavirus HSR 1
+235173 [no rank] SARS coronavirus Shanhgai LY
+235410 [no rank] SARS coronavirus Sin2774
+235411 [no rank] SARS coronavirus Sin2748
+235412 [no rank] SARS coronavirus Sin2679
+235413 [no rank] SARS coronavirus Sin2677
+235414 [no rank] SARS coronavirus Sin2500
+237639 [no rank] SARS coronavirus Taiwan TC1
+237640 [no rank] SARS coronavirus Taiwan TC2
+239241 [no rank] SARS coronavirus CUHK-AG01
+239242 [no rank] SARS coronavirus CUHK-AG02
+239243 [no rank] SARS coronavirus CUHK-AG03
+239758 [no rank] SARS coronavirus Taiwan TC3
+240273 [no rank] SARS coronavirus ZMY 1
+240549 [no rank] SARS coronavirus TWH
+240550 [no rank] SARS coronavirus TWJ
+240551 [no rank] SARS coronavirus TWK
+240552 [no rank] SARS coronavirus TWS
+240553 [no rank] SARS coronavirus TWY
+241183 [no rank] SARS coronavirus BJ2232
+241628 [no rank] SARS coronavirus TWC2
+241629 [no rank] SARS coronavirus TWC3
+242743 [no rank] SARS coronavirus FRA
+243925 [no rank] SARS coronavirus HPZ-2003
+247149 [no rank] SARS coronavirus WHU
+248485 [no rank] SARS coronavirus AS
+249062 [no rank] SARS coronavirus GZ-A
+249063 [no rank] SARS coronavirus GZ-B
+249064 [no rank] SARS coronavirus GZ-C
+249065 [no rank] SARS coronavirus GZ-D
+249066 [no rank] SARS coronavirus HGZ8L1-A
+249067 [no rank] SARS coronavirus HGZ8L1-B
+249068 [no rank] SARS coronavirus HSZ2-A
+249069 [no rank] SARS coronavirus HSZ-A
+249070 [no rank] SARS coronavirus HSZ-Bb
+249071 [no rank] SARS coronavirus HSZ-Cb
+249072 [no rank] SARS coronavirus HZS2-Fb
+249073 [no rank] SARS coronavirus JMD
+249074 [no rank] SARS coronavirus HZS2-D
+249075 [no rank] SARS coronavirus HZS2-E
+249076 [no rank] SARS coronavirus HZS2-Fc
+249077 [no rank] SARS coronavirus HZS2-C
+249078 [no rank] SARS coronavirus HGZ8L2
+249079 [no rank] SARS coronavirus HSZ-Bc
+249080 [no rank] SARS coronavirus HSZ-Cc
+249081 [no rank] SARS coronavirus ZS-B
+249082 [no rank] SARS coronavirus ZS-A
+249083 [no rank] SARS coronavirus LC1
+249084 [no rank] SARS coronavirus LC2
+249085 [no rank] SARS coronavirus LC3
+249086 [no rank] SARS coronavirus LC4
+249087 [no rank] SARS coronavirus LC5
+249088 [no rank] SARS coronavirus ZS-C
+249089 [no rank] SARS coronavirus HZS2-Bb
+252654 [no rank] SARS coronavirus BJ302
+253433 [no rank] SARS coronavirus PUMC01
+253434 [no rank] SARS coronavirus PUMC02
+253435 [no rank] SARS coronavirus PUMC03
+253634 [no rank] SARS coronavirus HB
+255194 [no rank] SARS coronavirus SoD
+255729 [no rank] SARS coronavirus Sino3-11
+255730 [no rank] SARS coronavirus Sino1-11
+256753 [no rank] SARS coronavirus GZ02
+258445 [no rank] SARS coronavirus GD69
+258507 [no rank] SARS coronavirus ShanghaiQXC1
+258508 [no rank] SARS coronavirus ShanghaiQXC2
+258963 [no rank] SARS coronavirus TW10
+258964 [no rank] SARS coronavirus TW11
+258965 [no rank] SARS coronavirus TW2
+258966 [no rank] SARS coronavirus TW3
+258967 [no rank] SARS coronavirus TW4
+258968 [no rank] SARS coronavirus TW5
+258969 [no rank] SARS coronavirus TW6
+258970 [no rank] SARS coronavirus TW7
+258971 [no rank] SARS coronavirus TW8
+258972 [no rank] SARS coronavirus TW9
+260069 [no rank] SARS coronavirus HC/SZ/61/03
+260550 [no rank] SARS coronavirus CUHK-L2
+260743 [no rank] SARS coronavirus NS-1
+262338 [no rank] SARS coronavirus GD03T0013
+264370 [no rank] SARS coronavirus TW
+264371 [no rank] SARS coronavirus TW-HP1
+264372 [no rank] SARS coronavirus TW-HP2
+264373 [no rank] SARS coronavirus TW-HP3
+264374 [no rank] SARS coronavirus TW-HP4
+264375 [no rank] SARS coronavirus TW-JC2
+264376 [no rank] SARS coronavirus TW-KC1
+264377 [no rank] SARS coronavirus TW-KC3
+264378 [no rank] SARS coronavirus TW-GD1
+264379 [no rank] SARS coronavirus TW-GD2
+264380 [no rank] SARS coronavirus TW-GD3
+264381 [no rank] SARS coronavirus TW-GD4
+264382 [no rank] SARS coronavirus TW-GD5
+264383 [no rank] SARS coronavirus TW-YM1
+264384 [no rank] SARS coronavirus TW-YM2
+264385 [no rank] SARS coronavirus TW-YM3
+264386 [no rank] SARS coronavirus TW-YM4
+264387 [no rank] SARS coronavirus TW-PH1
+264388 [no rank] SARS coronavirus TW-PH2
+264988 [no rank] SARS coronavirus sf099
+264989 [no rank] SARS coronavirus cw049
+264990 [no rank] SARS coronavirus sf098
+265124 [no rank] SARS coronavirus cw037
+265125 [no rank] SARS coronavirus xw002
+266147 [no rank] SARS coronavirus Sin0409
+266148 [no rank] SARS coronavirus Sin_WNV
+267383 [no rank] SARS coronavirus Sin842
+267384 [no rank] SARS coronavirus Sin852
+267385 [no rank] SARS coronavirus Sin3408
+267386 [no rank] SARS coronavirus Sin3765V
+267387 [no rank] SARS coronavirus Sin848
+267388 [no rank] SARS coronavirus Sin849
+267389 [no rank] SARS coronavirus Sin3725V
+267390 [no rank] SARS coronavirus SinP1
+267391 [no rank] SARS coronavirus SinP2
+267392 [no rank] SARS coronavirus SinP3
+267393 [no rank] SARS coronavirus SinP4
+267394 [no rank] SARS coronavirus SinP5
+267395 [no rank] SARS coronavirus Sin845
+267396 [no rank] SARS coronavirus Sin846
+267397 [no rank] SARS coronavirus Sin847
+267398 [no rank] SARS coronavirus Sin850
+267399 [no rank] SARS coronavirus Sin3408L
+273522 [no rank] SARS coronavirus LLJ-2004
+281976 [no rank] SARS coronavirus GZ0401
+284672 [no rank] SARS coronavirus TJF
+285267 [no rank] SARS coronavirus HHS-2004
+285945 [no rank] Civet SARS CoV 007/2004
+285946 [no rank] SARS coronavirus civet010
+285947 [no rank] SARS coronavirus civet014
+285948 [no rank] SARS coronavirus civet019
+285949 [no rank] SARS coronavirus civet020
+291613 [no rank] SARS coronavirus GD322
+292360 [no rank] SARS Coronavirus CDC#200301157
+293319 [no rank] SARS coronavirus PC4-127
+293320 [no rank] SARS coronavirus PC4-205
+293321 [no rank] SARS coronavirus GZ0403
+293933 [no rank] SARS coronavirus GZ0402
+293934 [no rank] SARS coronavirus PC4-13
+293935 [no rank] SARS coronavirus PC4-136
+293936 [no rank] SARS coronavirus PC4-227
+296837 [no rank] SARS coronavirus PC4-115
+296838 [no rank] SARS coronavirus PC4-137
+296839 [no rank] SARS coronavirus PC4-145
+296840 [no rank] SARS coronavirus PC4-199
+296841 [no rank] SARS coronavirus PC4-241
+299335 [no rank] SARS coronavirus B039
+304858 [no rank] SARS coronavirus A022
+305401 [no rank] SARS coronavirus A001
+305402 [no rank] SARS coronavirus A013
+305403 [no rank] SARS coronavirus A021
+305404 [no rank] SARS coronavirus A030
+305405 [no rank] SARS coronavirus A031
+305406 [no rank] SARS coronavirus B012
+305407 [no rank] SARS coronavirus B024
+305408 [no rank] SARS coronavirus B029
+305409 [no rank] SARS coronavirus B033
+305410 [no rank] SARS coronavirus B040
+305411 [no rank] SARS coronavirus C013
+305412 [no rank] SARS coronavirus C014
+305413 [no rank] SARS coronavirus C017
+305414 [no rank] SARS coronavirus C018
+305415 [no rank] SARS coronavirus C019
+305416 [no rank] SARS coronavirus C025
+305417 [no rank] SARS coronavirus C028
+305418 [no rank] SARS coronavirus C029
+312027 [no rank] SARS coronavirus WH20
+321147 [no rank] SARS coronavirus BJ162
+321149 [no rank] SARS coronavirus BJ202
+344702 [no rank] SARS coronavirus ZJ0301
+347536 [no rank] Bat SARS CoV Rm1/2004
+389167 [no rank] Bat CoV 279/2005
+347537 [no rank] Bat SARS CoV Rf1/2004
+389166 [no rank] Bat CoV 273/2005
+349342 [no rank] Bat SARS coronavirus Rp1
+349343 [no rank] Bat SARS coronavirus Rp2
+349344 [no rank] Bat SARS CoV Rp3/2004
+353145 [no rank] SARS coronavirus ZJ02
+385683 [no rank] SARS coronavirus CS21
+385684 [no rank] SARS coronavirus CS24
+385685 [no rank] SARS coronavirus ES191
+385686 [no rank] SARS coronavirus ES260
+385687 [no rank] SARS coronavirus WF188
+388737 [no rank] SARS coronavirus GDH-BJH01
+421444 [no rank] SARS coronavirus TJ01
+442736 [no rank] Bat SARS coronavirus HKU3
+333387 [no rank] Bat SARS coronavirus HKU3-1
+338605 [no rank] Bat SARS coronavirus HKU3-2
+338606 [no rank] Bat SARS coronavirus HKU3-3
+741997 [no rank] Bat SARS coronavirus HKU3-10
+741998 [no rank] Bat SARS coronavirus HKU3-11
+741999 [no rank] Bat SARS coronavirus HKU3-12
+742000 [no rank] Bat SARS coronavirus HKU3-13
+742001 [no rank] Bat SARS coronavirus HKU3-4
+742002 [no rank] Bat SARS coronavirus HKU3-5
+742003 [no rank] Bat SARS coronavirus HKU3-6
+742004 [no rank] Bat SARS coronavirus HKU3-7
+742005 [no rank] Bat SARS coronavirus HKU3-8
+742006 [no rank] Bat SARS coronavirus HKU3-9
+511429 [no rank] SARS coronavirus BJ182-12
+511430 [no rank] SARS coronavirus BJ182-4
+511431 [no rank] SARS coronavirus BJ182-8
+511432 [no rank] SARS coronavirus BJ182a
+511433 [no rank] SARS coronavirus BJ182b
+627442 [no rank] SARS coronavirus P2
+698398 [no rank] recombinant SARSr-CoV
+627440 [no rank] SARS coronavirus ExoN1
+633137 [no rank] SARS coronavirus MA15
+633140 [no rank] SARS coronavirus MA15 ExoN1
+698419 [no rank] SARS coronavirus wtic-MB
+722424 [no rank] SARS coronavirus Rs_672/2006
+1283332 [no rank] Bat coronavirus Rp/Shaanxi2011
+1283333 [no rank] Bat coronavirus Cp/Yunnan2011
+1415834 [no rank] Bat SARS-like coronavirus Rs3367
+1415851 [no rank] Bat SARS-like coronavirus RsSHC014
+1415852 [no rank] Bat SARS-like coronavirus WIV1
+1431340 [no rank] SARS bat coronavirus
+1487703 [no rank] Rhinolophus affinis coronavirus
+1503296 [no rank] BtRf-BetaCoV/HeB2013
+1503299 [no rank] BtRf-BetaCoV/JL2012
+1503300 [no rank] BtRf-BetaCoV/SX2013
+1503301 [no rank] BtRs-BetaCoV/GX2013
+1503302 [no rank] BtRs-BetaCoV/HuB2013
+1503303 [no rank] BtRs-BetaCoV/YN2013
+1508227 [no rank] Bat SARS-like coronavirus
+1699360 [no rank] Bat SARS-like coronavirus YNLF_31C
+1699361 [no rank] Bat SARS-like coronavirus YNLF_34C
+2042697 [no rank] SARS-related bat coronavirus RsSHC014
+2042698 [no rank] SARS-related betacoronavirus Rp3/2004
+2697049 [no rank] Severe acute respiratory syndrome coronavirus 2
+2709072 [no rank] Bat coronavirus RaTG13
+2901879 [no rank] Severe acute respiratory syndrome coronavirus
+227984 [no rank] SARS coronavirus Tor2

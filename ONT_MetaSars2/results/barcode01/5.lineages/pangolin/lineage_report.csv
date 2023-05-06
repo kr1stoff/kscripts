@@ -1,0 +1,2 @@
+taxon,lineage,conflict,ambiguity_score,scorpio_call,scorpio_support,scorpio_conflict,version,pangolin_version,pangoLEARN_version,pango_version,status,note
+NC_045512.2,None,,,,,,PANGO-v1.2.101,3.1.17,2021-11-25,v1.2.101,fail,N_content:1.0

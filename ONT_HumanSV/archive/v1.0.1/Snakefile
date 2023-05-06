@@ -1,0 +1,189 @@
+##-----------------------------------------------------------------------------
+## NAMES: Structual Variants Detection Pipeline
+## BUILD: Snakemake 6.4.1
+## CONDAE_ENV: biosoft_py37
+## VERSION: 1.0
+## DATE: 2021.6.11
+##-----------------------------------------------------------------------------
+
+# configfile: "config.yml"
+MINIMAP2_INDEX = config["REFERENCE_38"].replace("fa", "mmi")
+TARGET_INTERVAL = config["TARGET_INTERVAL"]
+
+rule all:
+    input:
+        expand("{workdir}/{sample}/merged_3callers_filt.hg38_annotsv.tsv", \
+        workdir=config["WORKDIR"], sample=config["SAMPLE_NAME"])
+
+rule make_minimap2_index:
+    input:
+        config["REFERENCE_38"]
+    output:
+        MINIMAP2_INDEX
+    params:
+        "-ax map-ont --MD -Y"
+    shell:
+        "minimap2 {params} {input} -d {output}"
+            
+rule minimap2_alignment:
+    input:
+        MINIMAP2_INDEX,
+        config["INPUT_FASTQ"]
+    output:
+        "{workdir}/{sample}/minimap2.bam"
+    log:
+        "{workdir}/{sample}/log/minimap2_alignment.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/minimap2_alignment.tsv"
+    threads:
+        config["THREADS"]
+    params:
+        minimap2_align = "-ax map-ont --MD -Y",
+        samtools_sort = "-O BAM"
+    shell:
+        "minimap2 -t {threads} {params.minimap2_align} {input} | \
+        samtools sort -@ {threads} {params.samtools_sort} -o {output} - && \
+        samtools index -@ {threads} {output} 2> {log}"
+        
+rule bam2bed:
+    input:
+        "{workdir}/{sample}/minimap2.bam"
+    output:
+        "{workdir}/{sample}/minimap2.bed"
+    log:
+        "{workdir}/{sample}/log/bam2bed.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/bam2bed.tsv"
+    run:
+        if config["TARGET_INTERVAL"] == "":
+            shell("bedtools bamtobed -i {input} | \
+                bedtools merge -i - | \
+                awk '$1!~/_random|chrUn_/' > {output} 2> {log}")
+        else:
+            shell("cp {TARGET_INTERVAL} {output}")
+            
+rule run_sniffles:
+    input:
+        "{workdir}/{sample}/minimap2.bam"
+    output:
+        "{workdir}/{sample}/sniffles.vcf"
+    log:
+        "{workdir}/{sample}/log/sniffles.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/sniffles.tsv"
+    threads:
+        config["THREADS"]
+    params:
+        "--min_support 1 --min_length 50 --num_reads_report -1 --min_seq_size 500 --genotype"
+    shell:
+        "sniffles -t {threads} {params} -m {input} -v {output} 2> {log}"
+        
+rule run_cuteSV:
+    input:
+        "{workdir}/{sample}/minimap2.bam",
+        config["REFERENCE_38"]
+    output:
+        "{workdir}/{sample}/cutesv.vcf",
+        directory("{workdir}/{sample}/cutesv_calls")
+    log:
+        "{workdir}/{sample}/log/cutesv.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/cutesv.tsv"
+    threads:
+        config["THREADS"]
+    params:
+        "--min_size 50 --max_size 1000000 --retain_work_dir \
+        --report_readid --min_support 1 --genotype \
+        --max_cluster_bias_INS 100 --diff_ratio_merging_INS 0.3 \
+        --max_cluster_bias_DEL 100 --diff_ratio_merging_DEL 0.3"
+    shell:
+        "mkdir {output[1]}\
+        && cuteSV -t {threads} {params} {input} {output} 2> {log}"
+
+rule run_svim:
+    input:
+        "{workdir}/{sample}/minimap2.bam",
+        config["REFERENCE_38"]
+    output:
+        directory("{workdir}/{sample}/svim_calls"),
+        "{workdir}/{sample}/svim_calls/variants.vcf"
+    log:
+        "{workdir}/{sample}/log/svim.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/svim.tsv"
+    params:
+        "--min_sv_size 50 --max_sv_size 1000000 --minimum_depth 1 --read_names --sequence_alleles"
+    shell:
+        "svim alignment {params} {output[0]} {input} 2> {log}"
+        
+rule run_SURVIVOR:
+    input:
+        "{workdir}/{sample}/sniffles.vcf",
+        "{workdir}/{sample}/cutesv.vcf",
+        "{workdir}/{sample}/svim_calls/variants.vcf"
+    output:
+        "{workdir}/{sample}/merged_1callers.vcf",
+        "{workdir}/{sample}/merged_2callers.vcf",
+        "{workdir}/{sample}/merged_3callers.vcf",
+        vcf_names = "{workdir}/{sample}/vcf_names"
+    log:
+        "{workdir}/{sample}/log/SURVIVOR.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/SURVIVOR.tsv"
+    params:
+        m1 = "1000 1 1 1 0 50",
+        m2 = "1000 2 1 1 0 50",
+        m3 = "1000 3 1 1 0 50"
+    ## Merge SVs
+    #~ Minimum number of supporting caller 1 2 3
+    shell:
+        "ls {input} > {output.vcf_names} \
+        && SURVIVOR merge {output.vcf_names} {params.m1} {output[0]} 2>> {log} \
+        && SURVIVOR merge {output.vcf_names} {params.m2} {output[1]} 2>> {log} \
+        && SURVIVOR merge {output.vcf_names} {params.m3} {output[2]} 2>> {log}"
+
+rule filter_by_region:
+    input:
+        "{workdir}/{sample}/merged_3callers.vcf",
+        interval = "{workdir}/{sample}/minimap2.bed"
+    output:
+        "{workdir}/{sample}/merged_3callers_filt.vcf"
+    log:
+        "{workdir}/{sample}/log/filter_by_region.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/filter_by_region.tsv"
+    ## [20210621] bedtools [sort -> merge] eliminate redundancy
+    params:
+        gap = "-header -f 0.5 -v -b " + config["UCSC_DB_DIR"] + "/UCSC_gap_non_redundancy.hg38.bed",
+        centro = "-header -f 0.5 -v -b " + config["UCSC_DB_DIR"] + "/UCSC_centromeres_non_redundancy.hg38.bed",
+        telo = "-header -f 0.5 -v -b " + config["UCSC_DB_DIR"] + "/UCSC_telomeres_non_redundancy.hg38.bed",
+        seg_dup = "-header -f 0.5 -v -b " + config["UCSC_DB_DIR"] + "/UCSC_segmental_dups_non_redundancy.hg38.bed",
+        trf = "-header -f 0.5 -v -b " + config["UCSC_DB_DIR"] + "/UCSC_single_repeats_non_redundancy.hg38.bed"
+    ## filter by region
+    ## [1] retaion target region
+    ## [2] discard genome special region opverlap 50%: 
+    ## gap, centromeres, telomeres, segmental duplications, tanden repeats
+    shell:
+        "grep -v -E '_random|chrUn_' {input[0]} | \
+        bedtools intersect -u -header -a - -b {input.interval} | \
+        bedtools intersect {params.gap} -a - | \
+        bedtools intersect {params.centro} -a - | \
+        bedtools intersect {params.telo} -a - | \
+        bedtools intersect {params.seg_dup} -a - | \
+        bedtools intersect {params.trf} -a - > {output} 2> {log}"
+        
+rule run_annotsv:
+    input:
+        "{workdir}/{sample}/merged_3callers_filt.vcf"
+    output:
+        "{workdir}/{sample}/merged_3callers_filt.hg38_annotsv.tsv"
+    log:
+        "{workdir}/{sample}/log/run_annotsv.log"
+    benchmark:
+        "{workdir}/{sample}/benchmark/run_annotsv.tsv"
+    params:
+        "-genomeBuild GRCh38 -SVinputInfo 0 -annotationMode full"
+    ## AnnotSV path need export to environment variants
+    ## see: https://github.com/lgmgeo/AnnotSV
+    shell:
+        "$ANNOTSV/bin/AnnotSV {params} -SVinputFile {input} -outputFile {output} 2> {log}"

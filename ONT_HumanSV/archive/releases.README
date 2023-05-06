@@ -1,0 +1,9 @@
+- v1.0.1
+  SVs detection pipeline, fisrt edition
+  update
+  	- bedtools -u: unique a vcf entry
+		- reschedule directories structrue
+- v1.0.2
+	update
+	- filter by SURVIVOR bincov lowMQ intervals
+	- Temporary Files, big file(e.g. bam.. >1G), remove these files after run all rules 

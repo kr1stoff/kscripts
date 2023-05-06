@@ -1,0 +1,11 @@
+CENTRIFUGE_BIN: /home/gwadmin/miniconda3/envs/centrifuge/bin
+CENTRIFUGE_DB: /sdbb/bioinfor/Database/Nanopore/centrifuge/hpvc/hpvc
+HG38HOST_MMI: /sdbb/bioinfor/Database/references/homo_sapiens/hg38.GenomeAndrRNA.mmi
+MICROBIAL_WGS_BIN: /home/gwadmin/miniconda3/envs/microbial_wgs/bin
+MIN_COVERAGE: '20'
+NANOPORE_BIN: /home/gwadmin/miniconda3/envs/nanopore/bin
+NEXTCLADE_SARS2: /sdbb/bioinfor/mengxf/Database/nextclade/data/sars-cov-2
+RLABEL: '"NC_045512.2"'
+SARS2_FA: /sdbb/bioinfor/Database/references/NC_045512.2/NC_045512.2.fasta
+SARS2_MMI: /sdbb/bioinfor/Database/references/NC_045512.2/NC_045512.2.mmi
+THREADS: '16'
